@@ -1,7 +1,18 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import App from "next/app";
+import Head from "next/head";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+export default class Root extends App {
+  render() {
+    const { Component } = this.props;
+
+    return (
+      <>
+        <Head>
+          <title>web3-react example</title>
+        </Head>
+
+        <Component />
+      </>
+    );
+  }
 }
-export default MyApp
